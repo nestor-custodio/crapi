@@ -73,3 +73,6 @@ Style/BlockDelimiters:
   Enabled: true
   Exclude:
     - 'spec/**/*.rb'
+Style/RescueModifier:
+  Description: This cop checks for uses of rescue in its modifier form.
+  Enabled: false
