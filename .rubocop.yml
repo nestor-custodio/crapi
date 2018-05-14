@@ -76,3 +76,6 @@ Style/BlockDelimiters:
 Style/RescueModifier:
   Description: This cop checks for uses of rescue in its modifier form.
   Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Description: This cop checks method parameter names for how descriptive they are.
+  Enabled: false
