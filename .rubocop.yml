@@ -41,9 +41,6 @@ Metrics/CyclomaticComplexity:
 Lint/Debugger:
   Description: Warn in debugger entries
   Enabled: false
-Style/RescueStandard:
-  Description: Avoid rescuing without specifying an error class.
-  Enabled: true
 Style/SymbolArray:
   Description: Use %i or %I for arrays of symbols.
   Enabled: false
