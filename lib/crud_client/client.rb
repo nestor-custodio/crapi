@@ -1,5 +1,6 @@
 require 'active_support/all'
 require 'net/http'
+require 'openssl'
 
 require 'crud_client/proxy'
 
@@ -9,21 +10,22 @@ class CrudClient::Client
   JSON_CONTENT_TYPE = 'application/json'.freeze
   FORM_CONTENT_TYPE = 'application/x-www-form-urlencoded'.freeze
 
-  def initialize(base_uri, proxy_host: nil, proxy_port: nil, proxy_username: nil, proxy_password: nil)
+  def initialize(base_uri, opts = {})
     @base_uri = case base_uri
                 when URI then base_uri
                 when String then URI(base_uri)
                 else raise CrudClient::ParameterError, %("base_url" given is a #{base_url.class}; expected String or URI)
                 end
 
-    @proxy_host = proxy_host
-    @proxy_port = proxy_port
-    @proxy_username = proxy_username
-    @proxy_password = proxy_password
+    @proxy_host = opts[:proxy_host]
+    @proxy_port = opts[:proxy_port]
+    @proxy_username = opts[:proxy_username]
+    @proxy_password = opts[:proxy_password]
 
     @http = Net::HTTP.new(@base_uri.host, @base_uri.port,
                           @proxy_host, @proxy_port, @proxy_username, @proxy_password)
     @http.use_ssl = (@base_uri.scheme == 'https')
+    @http.verify_mode = ::OpenSSL::SSL::VERIFY_NONE if opts[:insecure].present?
 
     @default_headers = { 'content-type': JSON_CONTENT_TYPE }.with_indifferent_access
   end
