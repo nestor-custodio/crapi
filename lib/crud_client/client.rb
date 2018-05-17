@@ -75,8 +75,16 @@ class CrudClient::Client
   ##
 
   def full_path(path, query: {})
-    path = "/#{path}" unless path[0] == '/'
-    path += "?#{URI.encode_www_form(query)}" if query.present?
+    path = [@base_uri.path, path].map { |i| i.gsub(%r{^/|/$}, '') }.keep_if(&:present?)
+    path = "/#{path.join('/')}"
+
+    if query.present?
+      path += case query
+              when Hash, Array then "?#{URI.encode_www_form(query)}"
+              when String then "?#{query}"
+              else raise CrudClient::ParameterError, %(Unexpected "query" type: #{query.class})
+              end
+    end
 
     path
   end
