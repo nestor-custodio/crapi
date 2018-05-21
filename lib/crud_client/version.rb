@@ -1,3 +1,3 @@
-module CrudClient
+class CrudClient
   VERSION = '0.1.0'.freeze
 end
