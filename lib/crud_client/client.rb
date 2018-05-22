@@ -27,7 +27,7 @@ class CrudClient::Client
     @http.use_ssl = (@base_uri.scheme == 'https')
     @http.verify_mode = ::OpenSSL::SSL::VERIFY_NONE if opts[:insecure].present?
 
-    @default_headers = { 'content-type': JSON_CONTENT_TYPE }.with_indifferent_access
+    @default_headers = { 'Content-Type': JSON_CONTENT_TYPE }.with_indifferent_access
   end
 
   def new_proxy(segment = '/', headers: nil)
@@ -54,7 +54,7 @@ class CrudClient::Client
 
   def patch(path, headers: {}, query: {}, payload: {})
     headers = @default_headers.merge(headers)
-    payload = format_payload(payload, as: headers[:'content-type'])
+    payload = format_payload(payload, as: headers[:'Content-Type'])
 
     response = @http.patch(full_path(path, query: query), payload, headers)
     ensure_success!(response)
@@ -63,7 +63,7 @@ class CrudClient::Client
 
   def post(path, headers: {}, query: {}, payload: {})
     headers = @default_headers.merge(headers)
-    payload = format_payload(payload, as: headers[:'content-type'])
+    payload = format_payload(payload, as: headers[:'Content-Type'])
 
     response = @http.post(full_path(path, query: query), payload, headers)
     ensure_success!(response)
@@ -72,7 +72,7 @@ class CrudClient::Client
 
   def put(path, headers: {}, query: {}, payload: {})
     headers = @default_headers.merge(headers)
-    payload = format_payload(payload, as: headers[:'content-type'])
+    payload = format_payload(payload, as: headers[:'Content-Type'])
 
     response = @http.put(full_path(path, query: query), payload, headers)
     ensure_success!(response)
@@ -106,11 +106,15 @@ class CrudClient::Client
   end
 
   def format_payload(payload, as: JSON_CONTENT_TYPE)
+    ## Non-Hash payloads are passed through as-is.
+    return payload unless payload.is_a? Hash
+
+    ## Massage Hash-like payloads into a suitable format.
     case as
     when JSON_CONTENT_TYPE
       JSON.generate(payload.as_json)
     when FORM_CONTENT_TYPE
-      URI.encode_www_form(payload)
+      payload.to_query
     else
       payload.to_s
     end
