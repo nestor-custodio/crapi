@@ -1,10 +1,10 @@
-class CrudClient
+module CrudClient
   class Error < ::StandardError
   end
 
   class ParameterError < Error
   end
 
-  class UnexpectedContentType < Error
+  class UnexpectedContentTypeError < Error
   end
 end

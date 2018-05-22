@@ -1,4 +1,5 @@
 require 'crud_client/client'
+require 'crud_client/version'
 
-class CrudClient
+module CrudClient
 end
