@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    crapi (0.1.0)
-      activesupport (~> 5.2)
+    crapi (0.1.1)
+      activesupport (~> 5.2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -59,4 +59,4 @@ DEPENDENCIES
   rspec_junit_formatter (~> 0.3)
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
