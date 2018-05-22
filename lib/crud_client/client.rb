@@ -70,6 +70,15 @@ class CrudClient::Client
     parse_response(response)
   end
 
+  def put(path, headers: {}, query: {}, payload: {})
+    headers = @default_headers.merge(headers)
+    payload = format_payload(payload, as: headers[:'content-type'])
+
+    response = @http.put(full_path(path, query: query), payload, headers)
+    ensure_success!(response)
+    parse_response(response)
+  end
+
   ##
 
   private
@@ -114,5 +123,13 @@ class CrudClient::Client
     else
       response.body
     end
+  end
+end
+
+## Net::HTTP needs a shortcut instance method for PUT calls like it does for GET/DELETE/PATCH/POST.
+##
+class Net::HTTP
+  def put(path, data, initheader = nil, dest = nil, &block)
+    send_entity(path, data, initheader, dest, Put, &block)
   end
 end

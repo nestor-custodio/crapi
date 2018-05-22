@@ -34,4 +34,9 @@ class CrudClient::Proxy
     @parent.patch("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
                   heades: @default_headers.merge(headers), query: query, payload: payload)
   end
+
+  def put(path, headers: {}, query: {}, payload: {})
+    @parent.put("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
+                headers: @default_headers.merge(headers), query: query, payload: payload)
+  end
 end
