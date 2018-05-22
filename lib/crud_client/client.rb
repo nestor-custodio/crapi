@@ -14,7 +14,7 @@ class CrudClient::Client
     @base_uri = case base_uri
                 when URI then base_uri
                 when String then URI(base_uri)
-                else raise CrudClient::ParameterError, %("base_url" given is a #{base_url.class}; expected String or URI)
+                else raise CrudClient::ParameterError, %(Unexpected "base_url" type: #{base_url.class})
                 end
 
     @proxy_host = opts[:proxy_host]
@@ -92,7 +92,8 @@ class CrudClient::Client
   end
 
   def ensure_success!(response)
-    raise(CrudClient::BadHttpResponseError, response.message) unless response.is_a? Net::HTTPSuccess
+    return if response.is_a? Net::HTTPSuccess
+    raise(CrudClient::BadHttpResponseError, "#{response.code} - #{response.message}")
   end
 
   def format_payload(payload, as: JSON_CONTENT_TYPE)
