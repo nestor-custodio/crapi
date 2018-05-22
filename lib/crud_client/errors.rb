@@ -7,7 +7,4 @@ module CrudClient
 
   class BadHttpResponseError < Error
   end
-
-  class UnexpectedContentTypeError < Error
-  end
 end

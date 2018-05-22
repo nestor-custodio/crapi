@@ -32,7 +32,7 @@ class CrudClient::Client
     CrudClient::Proxy.new(add: segment, to: self, headers: headers)
   end
 
-  ## CRUD methods...
+  ## CRUD methods ...
 
   def get(path, headers: {}, query: {})
     headers = @default_headers.merge(headers)

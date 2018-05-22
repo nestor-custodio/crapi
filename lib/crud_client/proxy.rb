@@ -13,7 +13,7 @@ class CrudClient::Proxy
     CrudClient::Proxy.new(add: segment, to: self, headers: headers)
   end
 
-  ## CRUD methods...
+  ## CRUD methods ...
 
   def get(path, headers: {}, query: {})
     @parent.get("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
