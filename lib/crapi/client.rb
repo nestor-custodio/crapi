@@ -3,6 +3,7 @@ require 'net/http'
 require 'openssl'
 
 require 'crapi/proxy'
+require 'crapi/errors'
 
 module Crapi
   class Client
