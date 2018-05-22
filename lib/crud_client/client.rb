@@ -14,7 +14,7 @@ class CrudClient::Client
     @base_uri = case base_uri
                 when URI then base_uri
                 when String then URI(base_uri)
-                else raise CrudClient::ParameterError, %(Unexpected "base_url" type: #{base_url.class})
+                else raise CrudClient::ArgumentError, %(Unexpected "base_url" type: #{base_url.class})
                 end
 
     @proxy_host = opts[:proxy_host]
@@ -93,7 +93,7 @@ class CrudClient::Client
       path += case query
               when Hash, Array then "?#{URI.encode_www_form(query)}"
               when String then "?#{query}"
-              else raise CrudClient::ParameterError, %(Unexpected "query" type: #{query.class})
+              else raise CrudClient::ArgumentError, %(Unexpected "query" type: #{query.class})
               end
     end
 

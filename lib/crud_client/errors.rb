@@ -2,7 +2,7 @@ module CrudClient
   class Error < ::StandardError
   end
 
-  class ParameterError < Error
+  class ArgumentError < Error
   end
 
   class BadHttpResponseError < Error
