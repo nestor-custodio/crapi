@@ -1,4 +1,4 @@
-RSpec.describe CrudClient do
+RSpec.describe CrudClient::Client do
   it 'has a version number' do
     expect(CrudClient::VERSION).not_to be nil
   end
