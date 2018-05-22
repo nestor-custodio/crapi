@@ -36,14 +36,6 @@ class CrudClient::Client
 
   ## CRUD methods ...
 
-  def get(path, headers: {}, query: {})
-    headers = @default_headers.merge(headers)
-
-    response = @http.get(full_path(path, query: query), headers)
-    ensure_success!(response)
-    parse_response(response)
-  end
-
   def delete(path, headers: {}, query: {})
     headers = @default_headers.merge(headers)
 
@@ -52,11 +44,10 @@ class CrudClient::Client
     parse_response(response)
   end
 
-  def post(path, headers: {}, query: {}, payload: {})
+  def get(path, headers: {}, query: {})
     headers = @default_headers.merge(headers)
-    payload = format_payload(payload, as: headers[:'content-type'])
 
-    response = @http.post(full_path(path, query: query), payload, headers)
+    response = @http.get(full_path(path, query: query), headers)
     ensure_success!(response)
     parse_response(response)
   end
@@ -66,6 +57,15 @@ class CrudClient::Client
     payload = format_payload(payload, as: headers[:'content-type'])
 
     response = @http.patch(full_path(path, query: query), payload, headers)
+    ensure_success!(response)
+    parse_response(response)
+  end
+
+  def post(path, headers: {}, query: {}, payload: {})
+    headers = @default_headers.merge(headers)
+    payload = format_payload(payload, as: headers[:'content-type'])
+
+    response = @http.post(full_path(path, query: query), payload, headers)
     ensure_success!(response)
     parse_response(response)
   end

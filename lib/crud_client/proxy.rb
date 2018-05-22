@@ -15,24 +15,24 @@ class CrudClient::Proxy
 
   ## CRUD methods ...
 
-  def get(path, headers: {}, query: {})
-    @parent.get("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
-                headers: @default_headers.merge(headers), query: query)
-  end
-
   def delete(path, headers: {}, query: {})
     @parent.delete("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
                    headers: @default_headers.merge(headers), query: query)
   end
 
-  def post(path, headers: {}, query: {}, payload: {})
-    @parent.post("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
-                 headers: @default_headers.merge(headers), query: query, payload: payload)
+  def get(path, headers: {}, query: {})
+    @parent.get("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
+                headers: @default_headers.merge(headers), query: query)
   end
 
   def patch(path, headers: {}, query: {}, payload: {})
     @parent.patch("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
                   heades: @default_headers.merge(headers), query: query, payload: payload)
+  end
+
+  def post(path, headers: {}, query: {}, payload: {})
+    @parent.post("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
+                 headers: @default_headers.merge(headers), query: query, payload: payload)
   end
 
   def put(path, headers: {}, query: {}, payload: {})
