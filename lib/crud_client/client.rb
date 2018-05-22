@@ -1,6 +1,8 @@
 require 'active_support/all'
 require 'net/http'
 
+require 'crud_client/proxy'
+
 class CrudClient::Client
   attr_accessor :default_headers
 
@@ -24,6 +26,10 @@ class CrudClient::Client
     @http.use_ssl = (@base_uri.scheme == 'https')
 
     @default_headers = { 'content-type': JSON_CONTENT_TYPE }.with_indifferent_access
+  end
+
+  def new_proxy(segment = '/', headers: nil)
+    CrudClient::Proxy.new(add: segment, to: self, headers: headers)
   end
 
   ## CRUD methods...
