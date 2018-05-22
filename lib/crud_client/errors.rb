@@ -5,6 +5,9 @@ module CrudClient
   class ParameterError < Error
   end
 
+  class BadHttpResponseError < Error
+  end
+
   class UnexpectedContentTypeError < Error
   end
 end
