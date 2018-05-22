@@ -2,9 +2,9 @@ require 'active_support/all'
 require 'net/http'
 require 'openssl'
 
-require 'crud_client/proxy'
+require 'crapi/proxy'
 
-class CrudClient::Client
+class Crapi::Client
   attr_accessor :default_headers
 
   JSON_CONTENT_TYPE = 'application/json'.freeze
@@ -14,7 +14,7 @@ class CrudClient::Client
     @base_uri = case base_uri
                 when URI then base_uri
                 when String then URI(base_uri)
-                else raise CrudClient::ArgumentError, %(Unexpected "base_url" type: #{base_url.class})
+                else raise Crapi::ArgumentError, %(Unexpected "base_url" type: #{base_url.class})
                 end
 
     @proxy_host = opts[:proxy_host]
@@ -31,7 +31,7 @@ class CrudClient::Client
   end
 
   def new_proxy(segment = '/', headers: nil)
-    CrudClient::Proxy.new(add: segment, to: self, headers: headers)
+    Crapi::Proxy.new(add: segment, to: self, headers: headers)
   end
 
   ## CRUD methods ...
@@ -93,7 +93,7 @@ class CrudClient::Client
       path += case query
               when Hash, Array then "?#{URI.encode_www_form(query)}"
               when String then "?#{query}"
-              else raise CrudClient::ArgumentError, %(Unexpected "query" type: #{query.class})
+              else raise Crapi::ArgumentError, %(Unexpected "query" type: #{query.class})
               end
     end
 
@@ -102,7 +102,7 @@ class CrudClient::Client
 
   def ensure_success!(response)
     return if response.is_a? Net::HTTPSuccess
-    raise(CrudClient::BadHttpResponseError, "#{response.code} - #{response.message}")
+    raise(Crapi::BadHttpResponseError, "#{response.code} - #{response.message}")
   end
 
   def format_payload(payload, as: JSON_CONTENT_TYPE)

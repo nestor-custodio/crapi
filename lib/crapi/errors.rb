@@ -1,4 +1,4 @@
-module CrudClient
+module Crapi
   class Error < ::StandardError
   end
 

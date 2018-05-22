@@ -1,5 +1,5 @@
 require 'bundler/setup'
-require 'crud_client'
+require 'crapi'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

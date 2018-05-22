@@ -1,6 +1,6 @@
-RSpec.describe CrudClient::Client do
+RSpec.describe Crapi::Client do
   it 'has a version number' do
-    expect(CrudClient::VERSION).not_to be nil
+    expect(Crapi::VERSION).not_to be nil
   end
 
   it 'does something useful' do

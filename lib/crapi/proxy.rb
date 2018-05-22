@@ -1,6 +1,6 @@
 require 'active_support/all'
 
-class CrudClient::Proxy
+class Crapi::Proxy
   attr_accessor :default_headers
 
   def initialize(add:, to:, headers: nil)
@@ -10,7 +10,7 @@ class CrudClient::Proxy
   end
 
   def new_proxy(segment = '/', headers: nil)
-    CrudClient::Proxy.new(add: segment, to: self, headers: headers)
+    Crapi::Proxy.new(add: segment, to: self, headers: headers)
   end
 
   ## CRUD methods ...

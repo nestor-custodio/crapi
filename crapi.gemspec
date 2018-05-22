@@ -1,16 +1,16 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'crud_client/version'
+require 'crapi/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'crud_client'
-  spec.version       = CrudClient::VERSION
+  spec.name          = 'crapi'
+  spec.version       = Crapi::VERSION
   spec.authors       = ['Nestor Custodio']
   spec.email         = ['sakimorix@gmail.com']
 
-  spec.summary       = 'A simple API client with built-in segment/header proxy support.'
-  spec.homepage      = 'https://www.github.com/nestor-custodio/crud_client'
+  spec.summary       = 'A simple API client with built-in segment/header proxy support. "... It could be better." ™️'
+  spec.homepage      = 'https://www.github.com/nestor-custodio/crapi'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

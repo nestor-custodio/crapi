@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    crud_client (0.1.0)
+    crapi (0.1.0)
       activesupport (~> 5.2)
 
 GEM
@@ -51,7 +51,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  crud_client!
+  crapi!
   pry (~> 0.11)
   pry-byebug (~> 3.6)
   rake (~> 10.0)
