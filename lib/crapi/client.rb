@@ -16,7 +16,7 @@ module Crapi
       @base_uri = case base_uri
                   when URI then base_uri
                   when String then URI(base_uri)
-                  else raise ArgumentError, %(Unexpected "base_url" type: #{base_url.class})
+                  else raise Crapi::ArgumentError, %(Unexpected "base_uri" type: #{base_uri.class})
                   end
 
       @proxy_host = opts[:proxy_host]
@@ -95,7 +95,7 @@ module Crapi
         path += case query
                 when Hash, Array then "?#{URI.encode_www_form(query)}"
                 when String then "?#{query}"
-                else raise ArgumentError, %(Unexpected "query" type: #{query.class})
+                else raise Crapi::ArgumentError, %(Unexpected "query" type: #{query.class})
                 end
       end
 
@@ -104,7 +104,11 @@ module Crapi
 
     def ensure_success!(response)
       return if response.is_a? Net::HTTPSuccess
-      raise BadHttpResponseError, "#{response.code} - #{response.message}"
+
+      message = "#{response.code} - #{response.message}"
+      message += "\n#{response.body}" if response.body.present?
+
+      raise Crapi::BadHttpResponseError, message
     end
 
     def format_payload(payload, as: JSON_CONTENT_TYPE)
