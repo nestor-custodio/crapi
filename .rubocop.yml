@@ -1,81 +1,64 @@
 AllCops:
-  TargetRubyVersion: 2.5
-  Include:
-  - "**/*.rake"
-  - "**/Gemfile"
-  - "**/Rakefile"
-  - "**/Capfile"
-  - "**/Berksfile"
-  - "**/Cheffile"
-  Exclude:
-  - "vendor/**/*"
-  - "db/**/*"
-  - "tmp/**/*"
-  - "true/**/*"
-Metrics/ClassLength:
-  Description: Avoid classes longer than 100 lines of code.
+  TargetRubyVersion: 3.0
+  SuggestExtensions: false
+  NewCops: enable
+
+
+Layout/EmptyLineAfterGuardClause:
+  # Add empty line after guard clause.
   Enabled: false
-  CountComments: false
-  Max: 100
-Metrics/LineLength:
-  Description: Limit lines to 100 characters.
-  Enabled: false
-  Max: 100
-Metrics/BlockLength:
-  Exclude:
-    - 'spec/**/*.rb'
-Metrics/MethodLength:
-  Description: Avoid methods longer than 10 lines of code.
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#short-methods
-  Enabled: false
-  CountComments: false
-  Max: 10
+
+Layout/LineLength:
+  # Checks that line length does not exceed the configured limit.
+  Max: 150
+
+
 Metrics/AbcSize:
-  Description: A calculated magnitude based on number of assignments, branches, and conditions.
-  Enabled: false
-  Max: 15
-Metrics/CyclomaticComplexity:
-  Description: A complexity metric that is strongly correlated to the number of test cases needed to validate a method.
-  Enabled: false
-  Max: 6
-Lint/Debugger:
-  Description: Warn in debugger entries
-  Enabled: false
-Style/SymbolArray:
-  Description: Use %i or %I for arrays of symbols.
-  Enabled: false
-Style/RegexpLiteral:
-  Description: Enforces using / or %r around regular expressions.
-  EnforcedStyle: percent_r
-Style/AsciiComments:
-  # Disabling this so we can use non-breaking spaces (' ') in documentation comments, preventing browsers from collapsing multiple spaces in code blocks.
-  Description: This cop checks for non-ascii (non-English) characters in comments.
-  Enabled: false
-Style/NumericLiterals:
-  Description: This cop checks for big numeric literals without _ between groups of digits in them.
-  Enabled: false
-Style/Documentation:
-  Description: Document classes and non-namespace modules.
-  Enabled: false
-Style/ClassAndModuleChildren:
-  Description: Use nested modules/class definitions instead of compact style.
-  Enabled: false
-Style/FrozenStringLiteralComment:
-  Enabled: false
-Style/EmptyMethod:
-  Enabled: false
-Style/StderrPuts:
-  Enabled: true
-  Exclude:
-    - 'bin/**/*'
-Style/BlockDelimiters:
-  Description: Check for uses of braces or do/end around single line or multi-line blocks.
-  Enabled: true
+  # A calculated magnitude based on number of assignments, branches, and conditions.
+  Max: 30
+
+Metrics/BlockLength:
+  # Avoid long blocks with many lines.
   Exclude:
     - 'spec/**/*.rb'
-Style/RescueModifier:
-  Description: This cop checks for uses of rescue in its modifier form.
+
+Metrics/CyclomaticComplexity:
+  # A complexity metric that is strongly correlated to the number of test cases needed to validate a method.
+  Max: 10
+
+Metrics/MethodLength:
+  # Avoid methods longer than 25 lines of code.
+  Max: 25
+
+
+Style/AsciiComments:
+  # Use only ASCII symbols in comments.
+  #
+  # NLC: We're allowing non-breaking spaces (' '), as they're needed to prevent
+  #      browsers from collapsing multiple spaces in documentation code blocks.
+  AllowedChars:
+    - ' '
+
+Style/ClassAndModuleChildren:
+  # Checks style of children classes and modules.
   Enabled: false
-Naming/UncommunicativeMethodParamName:
-  Description: This cop checks method parameter names for how descriptive they are.
+
+Style/FetchEnvVar:
+  # Suggests `ENV.fetch` for the replacement of `ENV[]`.
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  # Add the frozen_string_literal comment to the top of files to help transition to frozen string literals by default.
+  EnforcedStyle: never
+
+Style/NumericLiterals:
+  # Add underscores to large numeric literals to improve their readability.
+  Enabled: false
+
+Style/RegexpLiteral:
+  # Use / or %r around regular expressions.
+  EnforcedStyle: percent_r
+
+Style/StringLiterals:
+  # Check for use of ' vs ".
+  ConsistentQuotesInMultiline: true
