@@ -1,4 +1,8 @@
-# Crapi  [![Gem Version](https://badge.fury.io/rb/crapi.svg)](https://badge.fury.io/rb/crapi)
+[![Gem Version](https://img.shields.io/github/v/release/nestor-custodio/crapi?color=green&label=gem%20version)](https://rubygems.org/gems/crapi)
+[![MIT License](https://img.shields.io/github/license/nestor-custodio/crapi)](https://tldrlegal.com/license/mit-license)
+
+
+# Crapi
 
 Crapi is yet another API wrapper. Yes, there is no shortage of these out there, but no other API wrapper gem (that I could find) provided the kind of functionality you get from the Crapi::Proxy class, which is really the biggest benefit here.
 
@@ -29,19 +33,19 @@ Or install it yourself as:
 ### Client Usage
 
 ```ruby
-## Connect to an API.
+# Connect to an API.
 
 api = Crapi::Client.new('https://jsonplaceholder.typicode.com/')
 
 
-## Issue requests against the API.
+# Issue requests against the API.
 
-api.get('users/1')  ## GETs /users/1; returns a Hash.
+api.get('users/1')  # GETs /users/1; returns a Hash.
 
-api.get('posts', query: { userId: 2 })  ## GETs /posts?userId=2; returns an Array.
+api.get('posts', query: { userId: 2 })  # GETs /posts?userId=2; returns an Array.
 
 mew_comment = { user: 'megapwner', text: 'FRIST!!1!' }
-api.post('comments', payload: new_comment)  ## POSTs to /comments; returns a Hash.
+api.post('comments', payload: new_comment)  # POSTs to /comments; returns a Hash.
 ```
 
 ---
@@ -49,35 +53,35 @@ api.post('comments', payload: new_comment)  ## POSTs to /comments; returns a Has
 ### Proxy Usage
 
 ```ruby
-## Connect to an API.
+# Connect to an API.
 
 api = Crapi::Client.new('https://versioned.fake-api.com/api/')
 
 
-## Back in the v1 days, versioning of this API was via the URL ...
+# Back in the v1 days, versioning of this API was via the URL ...
 
 v1 = api.new_proxy('/v1')
 
-v1.get('data')  ## GETs /api/v1/data; pretty straight-forward.
-v1.post('data', payload: values)  ## POSTs *values* to /api/v1/data.
+v1.get('data')  # GETs /api/v1/data; pretty straight-forward.
+v1.post('data', payload: values)  # POSTs *values* to /api/v1/data.
 
 
-## For API v2, they switched to an Accept header approach ...
+# For API v2, they switched to an Accept header approach ...
 
 v2 = api.new_proxy('/', headers: { Accept: 'application/vnd.fake-api.v2+json' })
 
-v2.get('data')  ## GETs /api/data with the v2 header.
+v2.get('data')  # GETs /api/data with the v2 header.
 
 
-## API v3 keeps the Accept header approach ...
+# API v3 keeps the Accept header approach ...
 
 v3 = api.new_proxy('/', headers: { Accept: 'application/vnd.fake-api.v3+json' })
 
-v3.get('data')  ## GETs /api/data with the v3 header.
+v3.get('data')  # GETs /api/data with the v3 header.
 
 
-## Note that only one connection to the client is made and you can easily make
-## v1, v2, and v3 API calls ad hoc without having to juggle paths/headers yourself.
+# Note that only one connection to the client is made and you can easily make
+# v1, v2, and v3 API calls ad hoc without having to juggle paths/headers yourself.
 ```
 
 ---
@@ -95,13 +99,13 @@ Additional features/options coming in the future:
 
 ## Contribution / Development
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/nestor-custodio/crapi.
+Bug reports and pull requests are welcome at: [https://github.com/nestor-custodio/crapi](https://github.com/nestor-custodio/crapi)
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `bundle exec rspec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-Linting is courtesy of [Rubocop](https://github.com/bbatsov/rubocop) and documentation is built using [Yard](https://yardoc.org/). Neither is included in the Gemspec; you'll need to install these locally (`gem install rubocop yard`) to take advantage.
+Linting is courtesy of [Rubocop](https://docs.rubocop.org/) (`bundle exec rubocop`) and documentation is built using [Yard](https://yardoc.org/) (`bundle exec yard`). Please ensure you have a clean bill of health from Rubocop and that any new features and/or changes to behaviour are reflected in the documentation before submitting a pull request.
 
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Crapi is available as open source under the terms of the [MIT License](https://tldrlegal.com/license/mit-license).
