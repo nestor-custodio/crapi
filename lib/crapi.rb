@@ -2,7 +2,7 @@ require 'crapi/client'
 require 'crapi/proxy'
 require 'crapi/version'
 
-# Parent module for the various Crapi classes.
+# Parent module for the various CrAPI classes.
 #
-module Crapi
+module CrAPI
 end

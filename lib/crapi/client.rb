@@ -5,7 +5,7 @@ require 'openssl'
 require 'crapi/proxy'
 require 'crapi/errors'
 
-module Crapi
+module CrAPI
   # Provides a connection mechanism, simple CRUD methods ({#delete} / {#get} / {#patch} / {#post} /
   # {#put}), and proxy generators.
   #
@@ -52,13 +52,13 @@ module Crapi
     #   Maps to `Net::HTTP#new`'s *p_pass*.
     #
     #
-    # @raise [Crapi::ArgumentError]
+    # @raise [CrAPI::ArgumentError]
     #
     def initialize(base_uri, opts = {})
       @base_uri = case base_uri
                   when URI then base_uri
                   when String then URI(base_uri)
-                  else raise Crapi::ArgumentError, %(Unexpected "base_uri" type: #{base_uri.class})
+                  else raise CrAPI::ArgumentError, %(Unexpected "base_uri" type: #{base_uri.class})
                   end
 
       @proxy_host = opts[:proxy_host]
@@ -74,7 +74,7 @@ module Crapi
       @default_headers = { 'Content-Type': JSON_CONTENT_TYPE }.with_indifferent_access
     end
 
-    # Returns a new {Crapi::Proxy Crapi::Proxy} for this client.
+    # Returns a new {CrAPI::Proxy CrAPI::Proxy} for this client.
     #
     #
     # @param segment [String]
@@ -84,7 +84,7 @@ module Crapi
     #   The default headers for the new proxy.
     #
     #
-    # @return [Crapi::Proxy]
+    # @return [CrAPI::Proxy]
     #
     def new_proxy(segment = '/', headers: nil)
       Proxy.new(add: segment, to: self, headers: headers)
@@ -245,7 +245,7 @@ module Crapi
     #   Hashes and Arrays are serialized as URI-encoded form data before appending.
     #
     #
-    # @raise [Crapi::ArgumentError]
+    # @raise [CrAPI::ArgumentError]
     #
     # @return [String]
     #
@@ -257,7 +257,7 @@ module Crapi
         path += case query
                 when Hash, Array then "?#{URI.encode_www_form(query)}"
                 when String then "?#{query}"
-                else raise Crapi::ArgumentError, %(Unexpected "query" type: #{query.class})
+                else raise CrAPI::ArgumentError, %(Unexpected "query" type: #{query.class})
                 end
       end
 
@@ -271,7 +271,7 @@ module Crapi
     #   The response to evaluate as "successful" or not.
     #
     #
-    # @raise [Crapi::BadHttpResponseError]
+    # @raise [CrAPI::BadHttpResponseError]
     #
     # @return [nil]
     #
@@ -281,7 +281,7 @@ module Crapi
       message = "#{response.code} - #{response.message}"
       message += "\n#{response.body}" if response.body.present?
 
-      raise Crapi::BadHttpResponseError, message
+      raise CrAPI::BadHttpResponseError, message
     end
 
     # Serializes the given payload per the requested content-type.

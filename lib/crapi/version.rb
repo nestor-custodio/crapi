@@ -1,7 +1,7 @@
-# The Crapi module houses the {Crapi::Client Crapi::Client} and {Crapi::Proxy Crapi::Proxy} classes
+# The CrAPI module houses the {CrAPI::Client CrAPI::Client} and {CrAPI::Proxy CrAPI::Proxy} classes
 # in this gem.
 #
-module Crapi
+module CrAPI
   # The canonical **crapi** gem version.
   #
   # This should only ever be updated *immediately* before a release; the commit that updates this

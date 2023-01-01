@@ -1,5 +1,5 @@
-module Crapi
-  # The base Error class for all {Crapi}-related issues.
+module CrAPI
+  # The base Error class for all {CrAPI}-related issues.
   #
   class Error < ::StandardError
   end

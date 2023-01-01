@@ -4,18 +4,18 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
-  Class: Crapi::Client
+  Class: CrAPI::Client
   
-    &mdash; Documentation by YARD 0.9.12
+    &mdash; Documentation by YARD 0.9.28
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
-  pathId = "Crapi::Client";
+<script type="text/javascript">
+  pathId = "CrAPI::Client";
   relpath = '../';
 </script>
 
@@ -37,7 +37,7 @@
         <div id="menu">
   
     <a href="../_index.html">Index (C)</a> &raquo;
-    <span class='title'><span class='object_link'><a href="../Crapi.html" title="Crapi (module)">Crapi</a></span></span>
+    <span class='title'><span class='object_link'><a href="../CrAPI.html" title="CrAPI (module)">CrAPI</a></span></span>
      &raquo; 
     <span class="title">Client</span>
   
@@ -59,7 +59,7 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><h1>Class: Crapi::Client
+      <div id="content"><h1>Class: CrAPI::Client
   
   
   
@@ -74,7 +74,7 @@
         <ul class="fullTree">
           <li>Object</li>
           
-            <li class="next">Crapi::Client</li>
+            <li class="next">CrAPI::Client</li>
           
         </ul>
         <a href="#" class="inheritanceTree">show all</a>
@@ -101,9 +101,8 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    
-<p>Provides a connection mechanism, simple CRUD methods (<span class='object_link'><a href="#delete-instance_method" title="Crapi::Client#delete (method)">#delete</a></span> / <span class='object_link'><a href="#get-instance_method" title="Crapi::Client#get (method)">#get</a></span> /
-<span class='object_link'><a href="#patch-instance_method" title="Crapi::Client#patch (method)">#patch</a></span> / <span class='object_link'><a href="#post-instance_method" title="Crapi::Client#post (method)">#post</a></span> / <span class='object_link'><a href="#put-instance_method" title="Crapi::Client#put (method)">#put</a></span>), and proxy generators.</p>
+    <p>Provides a connection mechanism, simple CRUD methods (<span class='object_link'><a href="#delete-instance_method" title="CrAPI::Client#delete (method)">#delete</a></span> / <span class='object_link'><a href="#get-instance_method" title="CrAPI::Client#get (method)">#get</a></span> / <span class='object_link'><a href="#patch-instance_method" title="CrAPI::Client#patch (method)">#patch</a></span> / <span class='object_link'><a href="#post-instance_method" title="CrAPI::Client#post (method)">#post</a></span> /
+<span class='object_link'><a href="#put-instance_method" title="CrAPI::Client#put (method)">#put</a></span>), and proxy generators.</p>
 
 
   </div>
@@ -112,14 +111,18 @@
   
 
 </div>
-  <h2>Constant Summary</h2>
-  <dl class="constants">
-    
-      <dt id="JSON_CONTENT_TYPE-constant" class="">JSON_CONTENT_TYPE =
-        <div class="docstring">
+  
+    <h2>
+      Constant Summary
+      <small><a href="#" class="constants_summary_toggle">collapse</a></small>
+    </h2>
+
+    <dl class="constants">
+      
+        <dt id="JSON_CONTENT_TYPE-constant" class="">JSON_CONTENT_TYPE =
+          <div class="docstring">
   <div class="discussion">
-    
-<p>The content-type for JSON data.</p>
+    <p>The content-type for JSON data.</p>
 
 
   </div>
@@ -128,14 +131,13 @@
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-      <dt id="FORM_CONTENT_TYPE-constant" class="">FORM_CONTENT_TYPE =
-        <div class="docstring">
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/json</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+        <dt id="FORM_CONTENT_TYPE-constant" class="">FORM_CONTENT_TYPE =
+          <div class="docstring">
   <div class="discussion">
-    
-<p>The content-type for FORM data.</p>
+    <p>The content-type for FORM data.</p>
 
 
   </div>
@@ -144,10 +146,11 @@
   
 
 </div>
-      </dt>
-      <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/x-www-form-urlencoded</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
-    
-  </dl>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/x-www-form-urlencoded</span><span class='tstring_end'>&#39;</span></span><span class='period'>.</span><span class='id identifier rubyid_freeze'>freeze</span></pre></dd>
+      
+    </dl>
+  
 
 
 
@@ -175,9 +178,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A Hash containing headers to send with every request (unless overriden
-elsewhere).</p>
+    <span class="summary_desc"><div class='inline'><p>A Hash containing headers to send with every request (unless overriden elsewhere).</p>
 </div></span>
   
 </li>
@@ -213,8 +214,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CRUD method: DELETE.</p>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: DELETE.</p>
 </div></span>
   
 </li>
@@ -237,8 +237,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CRUD method: GET.</p>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: GET.</p>
 </div></span>
   
 </li>
@@ -263,8 +262,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>A new instance of Client.</p>
+    <span class="summary_desc"><div class='inline'><p>A new instance of Client.</p>
 </div></span>
   
 </li>
@@ -273,7 +271,7 @@ elsewhere).</p>
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#new_proxy-instance_method" title="#new_proxy (instance method)">#<strong>new_proxy</strong>(segment = &#39;/&#39;, headers: nil)  &#x21d2; Crapi::Proxy </a>
+      <a href="#new_proxy-instance_method" title="#new_proxy (instance method)">#<strong>new_proxy</strong>(segment = &#39;/&#39;, headers: nil)  &#x21d2; CrAPI::Proxy </a>
     
 
     
@@ -287,8 +285,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>Returns a new <span class='object_link'><a href="Proxy.html" title="Crapi::Proxy (class)">Crapi::Proxy</a></span> for this client.</p>
+    <span class="summary_desc"><div class='inline'><p>Returns a new <span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this client.</p>
 </div></span>
   
 </li>
@@ -311,8 +308,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CRUD method: PATCH.</p>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: PATCH.</p>
 </div></span>
   
 </li>
@@ -335,8 +331,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CRUD method: POST.</p>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: POST.</p>
 </div></span>
   
 </li>
@@ -359,8 +354,7 @@ elsewhere).</p>
   
 
   
-    <span class="summary_desc"><div class='inline'>
-<p>CRUD method: PUT.</p>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: PUT.</p>
 </div></span>
   
 </li>
@@ -375,7 +369,7 @@ elsewhere).</p>
     <div class="method_details first">
   <h3 class="signature first" id="initialize-instance_method">
   
-    #<strong>initialize</strong>(base_uri, opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="Crapi::Client (class)">Client</a></span></tt> 
+    #<strong>initialize</strong>(base_uri, opts = {})  &#x21d2; <tt><span class='object_link'><a href="" title="CrAPI::Client (class)">Client</a></span></tt> 
   
 
   
@@ -383,8 +377,7 @@ elsewhere).</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns a new instance of Client</p>
+    <p>Returns a new instance of Client.</p>
 
 
   </div>
@@ -403,10 +396,8 @@ elsewhere).</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The base URI the client should use for determining the host to connect to,
-determining whether SSH is applicable, and setting the base path for
-subsequent CRUD calls.</p>
+        <div class='inline'><p>The base URI the client should use for determining the host to connect to, determining
+whether SSH is applicable, and setting the base path for subsequent CRUD calls.</p>
 </div>
       
     </li>
@@ -423,9 +414,7 @@ subsequent CRUD calls.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>Method options. All method options are <strong>optional</strong> in this
-particular case.</p>
+        <div class='inline'><p>Method options. All method options are <strong>optional</strong> in this particular case.</p>
 </div>
       
     </li>
@@ -447,9 +436,8 @@ particular case.</p>
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>Whether to allow insecure SSH connections (i.e. don&#39;t attempt to verify
-the validity of the given certificate).</p>
+            &mdash; <div class='inline'><p>Whether to allow insecure SSH connections (i.e. don’t attempt to verify the validity of the
+given certificate).</p>
 </div>
           
         </li>
@@ -461,9 +449,8 @@ the validity of the given certificate).</p>
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The DNS name or IP address of a proxy server to use when connecting to the
-target system. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_addr</em>.</p>
+            &mdash; <div class='inline'><p>The DNS name or IP address of a proxy server to use when connecting to the target system.
+Maps to <code>Net::HTTP#new</code>’s <em>p_addr</em>.</p>
 </div>
           
         </li>
@@ -475,9 +462,8 @@ target system. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_addr</em>.</p>
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The proxy server port to use when connecting to the target system. Maps to
-<code>Net::HTTP#new</code>&#39;s <em>p_port</em>.</p>
+            &mdash; <div class='inline'><p>The proxy server port to use when connecting to the target system.
+Maps to <code>Net::HTTP#new</code>’s <em>p_port</em>.</p>
 </div>
           
         </li>
@@ -489,9 +475,8 @@ target system. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_addr</em>.</p>
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The username to give if authorization is required to access the specified
-proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_user</em>.</p>
+            &mdash; <div class='inline'><p>The username to give if authorization is required to access the specified proxy host.
+Maps to <code>Net::HTTP#new</code>’s <em>p_user</em>.</p>
 </div>
           
         </li>
@@ -503,9 +488,8 @@ proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_user</em>.</p>
             
           </span>
           
-            &mdash; <div class='inline'>
-<p>The password to give if authorization is required to access the specified
-proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_pass</em>.</p>
+            &mdash; <div class='inline'><p>The password to give if authorization is required to access the specified proxy host.
+Maps to <code>Net::HTTP#new</code>’s <em>p_pass</em>.</p>
 </div>
           
         </li>
@@ -519,7 +503,7 @@ proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_pass</em>.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="ArgumentError.html" title="Crapi::ArgumentError (class)">Crapi::ArgumentError</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="ArgumentError.html" title="CrAPI::ArgumentError (class)">CrAPI::ArgumentError</a></span></tt>)</span>
       
       
       
@@ -560,7 +544,7 @@ proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_pass</em>.</p>
   <span class='ivar'>@base_uri</span> <span class='op'>=</span> <span class='kw'>case</span> <span class='id identifier rubyid_base_uri'>base_uri</span>
               <span class='kw'>when</span> <span class='const'>URI</span> <span class='kw'>then</span> <span class='id identifier rubyid_base_uri'>base_uri</span>
               <span class='kw'>when</span> <span class='const'>String</span> <span class='kw'>then</span> <span class='const'>URI</span><span class='lparen'>(</span><span class='id identifier rubyid_base_uri'>base_uri</span><span class='rparen'>)</span>
-              <span class='kw'>else</span> <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../Crapi.html" title="Crapi (module)">Crapi</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ArgumentError.html" title="Crapi::ArgumentError (class)">ArgumentError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>%(</span><span class='tstring_content'>Unexpected &quot;base_uri&quot; type: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_uri'>base_uri</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_end'>)</span></span>
+              <span class='kw'>else</span> <span class='id identifier rubyid_raise'>raise</span> <span class='const'><span class='object_link'><a href="../CrAPI.html" title="CrAPI (module)">CrAPI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="ArgumentError.html" title="CrAPI::ArgumentError (class)">ArgumentError</a></span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>%(</span><span class='tstring_content'>Unexpected &quot;base_uri&quot; type: </span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_base_uri'>base_uri</span><span class='period'>.</span><span class='id identifier rubyid_class'>class</span><span class='embexpr_end'>}</span><span class='tstring_end'>)</span></span>
               <span class='kw'>end</span>
 
   <span class='ivar'>@proxy_host</span> <span class='op'>=</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:proxy_host</span><span class='rbracket'>]</span>
@@ -573,7 +557,7 @@ proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_pass</em>.</p>
   <span class='ivar'>@http</span><span class='period'>.</span><span class='id identifier rubyid_use_ssl'>use_ssl</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='ivar'>@base_uri</span><span class='period'>.</span><span class='id identifier rubyid_scheme'>scheme</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
   <span class='ivar'>@http</span><span class='period'>.</span><span class='id identifier rubyid_verify_mode'>verify_mode</span> <span class='op'>=</span> <span class='op'>::</span><span class='const'>OpenSSL</span><span class='op'>::</span><span class='const'>SSL</span><span class='op'>::</span><span class='const'>VERIFY_NONE</span> <span class='kw'>if</span> <span class='id identifier rubyid_opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:insecure</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_present?'>present?</span>
 
-  <span class='ivar'>@default_headers</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='label_end'>&#39;:</span> <span class='const'><span class='object_link'><a href="#JSON_CONTENT_TYPE-constant" title="Crapi::Client::JSON_CONTENT_TYPE (constant)">JSON_CONTENT_TYPE</a></span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_with_indifferent_access'>with_indifferent_access</span>
+  <span class='ivar'>@default_headers</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>Content-Type</span><span class='label_end'>&#39;:</span> <span class='const'><span class='object_link'><a href="#JSON_CONTENT_TYPE-constant" title="CrAPI::Client::JSON_CONTENT_TYPE (constant)">JSON_CONTENT_TYPE</a></span></span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_with_indifferent_access'>with_indifferent_access</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -598,10 +582,9 @@ proxy host. Maps to <code>Net::HTTP#new</code>&#39;s <em>p_pass</em>.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>A Hash containing headers to send with every request (unless overriden
-elsewhere). Headers set by the user via the CRUD methods&#39;
-<em>headers</em> still override any conflicting default header.</p>
+    <p>A Hash containing headers to send with every request (unless overriden elsewhere). Headers
+set by the user via the CRUD methods’ <em>headers</em> still override any conflicting default
+header.</p>
 
 
   </div>
@@ -648,8 +631,7 @@ elsewhere). Headers set by the user via the CRUD methods&#39;
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>CRUD method: DELETE</p>
+    <p>CRUD method: DELETE</p>
 
 
   </div>
@@ -668,10 +650,8 @@ elsewhere). Headers set by the user via the CRUD methods&#39;
       
       
         &mdash;
-        <div class='inline'>
-<p>The path to the resource to DELETE. Note that this path is always
-interpreted as relative to the client&#39;s base_uri&#39;s path, regardless
-of whether it begins with a “/”.</p>
+        <div class='inline'><p>The path to the resource to DELETE. Note that this path is always interpreted as relative
+to the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
 </div>
       
     </li>
@@ -684,12 +664,12 @@ of whether it begins with a “/”.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Additional headers to set in addition to the client&#39;s defaults. Any
-header given here and also appearing in the client&#39;s defaults will
-override said default value.</p>
+        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
+also appearing in the client’s defaults will override said default value.</p>
 </div>
       
     </li>
@@ -702,12 +682,12 @@ override said default value.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>Array</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Query string values, if any, to append to the given path. Strings are
-appended as-is; Hashes and Arrays are serialized as URI-encoded form data
-before appending.</p>
+        <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
 </div>
       
     </li>
@@ -768,8 +748,7 @@ before appending.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>CRUD method: GET</p>
+    <p>CRUD method: GET</p>
 
 
   </div>
@@ -788,10 +767,8 @@ before appending.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The path to the resource to GET. Note that this path is always interpreted
-as relative to the client&#39;s base_uri&#39;s path, regardless of whether
-it begins with a “/”.</p>
+        <div class='inline'><p>The path to the resource to GET. Note that this path is always interpreted as relative to
+the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
 </div>
       
     </li>
@@ -804,12 +781,12 @@ it begins with a “/”.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Additional headers to set in addition to the client&#39;s defaults. Any
-header given here and also appearing in the client&#39;s defaults will
-override said default value.</p>
+        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
+also appearing in the client’s defaults will override said default value.</p>
 </div>
       
     </li>
@@ -822,12 +799,12 @@ override said default value.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>Array</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Query string values, if any, to append to the given path. Strings are
-appended as-is; Hashes and Arrays are serialized as URI-encoded form data
-before appending.</p>
+        <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
 </div>
       
     </li>
@@ -880,7 +857,7 @@ before appending.</p>
       <div class="method_details ">
   <h3 class="signature " id="new_proxy-instance_method">
   
-    #<strong>new_proxy</strong>(segment = &#39;/&#39;, headers: nil)  &#x21d2; <tt><span class='object_link'><a href="Proxy.html" title="Crapi::Proxy (class)">Crapi::Proxy</a></span></tt> 
+    #<strong>new_proxy</strong>(segment = &#39;/&#39;, headers: nil)  &#x21d2; <tt><span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span></tt> 
   
 
   
@@ -888,8 +865,7 @@ before appending.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>Returns a new <span class='object_link'><a href="Proxy.html" title="Crapi::Proxy (class)">Crapi::Proxy</a></span> for this client.</p>
+    <p>Returns a new <span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this client.</p>
 
 
   </div>
@@ -910,8 +886,7 @@ before appending.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The segment to add to this client&#39;s path.</p>
+        <div class='inline'><p>The segment to add to this client’s path.</p>
 </div>
       
     </li>
@@ -924,10 +899,11 @@ before appending.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>The default headers for the new proxy.</p>
+        <div class='inline'><p>The default headers for the new proxy.</p>
 </div>
       
     </li>
@@ -940,7 +916,7 @@ before appending.</p>
     <li>
       
       
-        <span class='type'>(<tt><span class='object_link'><a href="Proxy.html" title="Crapi::Proxy (class)">Crapi::Proxy</a></span></tt>)</span>
+        <span class='type'>(<tt><span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span></tt>)</span>
       
       
       
@@ -962,7 +938,7 @@ before appending.</p>
       <pre class="code"><span class="info file"># File 'lib/crapi/client.rb', line 89</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_new_proxy'>new_proxy</span><span class='lparen'>(</span><span class='id identifier rubyid_segment'>segment</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='kw'>nil</span><span class='rparen'>)</span>
-  <span class='const'><span class='object_link'><a href="Proxy.html" title="Crapi::Proxy (class)">Proxy</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Proxy.html#initialize-instance_method" title="Crapi::Proxy#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>add:</span> <span class='id identifier rubyid_segment'>segment</span><span class='comma'>,</span> <span class='label'>to:</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
+  <span class='const'><span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">Proxy</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Proxy.html#initialize-instance_method" title="CrAPI::Proxy#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='label'>add:</span> <span class='id identifier rubyid_segment'>segment</span><span class='comma'>,</span> <span class='label'>to:</span> <span class='kw'>self</span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -980,8 +956,7 @@ before appending.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>CRUD method: PATCH</p>
+    <p>CRUD method: PATCH</p>
 
 
   </div>
@@ -1000,10 +975,8 @@ before appending.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The path to the resource to PATCH. Note that this path is always
-interpreted as relative to the client&#39;s base_uri&#39;s path, regardless
-of whether it begins with a “/”.</p>
+        <div class='inline'><p>The path to the resource to PATCH. Note that this path is always interpreted as relative to
+the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
 </div>
       
     </li>
@@ -1016,12 +989,12 @@ of whether it begins with a “/”.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Additional headers to set in addition to the client&#39;s defaults. Any
-header given here and also appearing in the client&#39;s defaults will
-override said default value.</p>
+        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
+also appearing in the client’s defaults will override said default value.</p>
 </div>
       
     </li>
@@ -1034,12 +1007,12 @@ override said default value.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>Array</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Query string values, if any, to append to the given path. Strings are
-appended as-is; Hashes and Arrays are serialized as URI-encoded form data
-before appending.</p>
+        <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
 </div>
       
     </li>
@@ -1052,11 +1025,12 @@ before appending.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>The payload to send, if any. Strings are used as-is; Hashes are serialized
-per the request&#39;s “Content-Type” header.</p>
+        <div class='inline'><p>The payload to send, if any. Strings are used as-is; Hashes are serialized per the
+request’s “Content-Type” header.</p>
 </div>
       
     </li>
@@ -1097,7 +1071,7 @@ per the request&#39;s “Content-Type” header.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_patch'>patch</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>query:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>payload:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='ivar'>@default_headers</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='id identifier rubyid_format_payload'>format_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='label'>as:</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='symbol'>:Content-Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='id identifier rubyid_format_payload'>format_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='label'>as:</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='symbol'>:&#39;Content-Type&#39;</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@http</span><span class='period'>.</span><span class='id identifier rubyid_patch'>patch</span><span class='lparen'>(</span><span class='id identifier rubyid_full_path'>full_path</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>query:</span> <span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ensure_success!'>ensure_success!</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1119,8 +1093,7 @@ per the request&#39;s “Content-Type” header.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>CRUD method: POST</p>
+    <p>CRUD method: POST</p>
 
 
   </div>
@@ -1139,10 +1112,8 @@ per the request&#39;s “Content-Type” header.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The path to the resource to POST. Note that this path is always interpreted
-as relative to the client&#39;s base_uri&#39;s path, regardless of whether
-it begins with a “/”.</p>
+        <div class='inline'><p>The path to the resource to POST. Note that this path is always interpreted as relative to
+the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
 </div>
       
     </li>
@@ -1155,12 +1126,12 @@ it begins with a “/”.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Additional headers to set in addition to the client&#39;s defaults. Any
-header given here and also appearing in the client&#39;s defaults will
-override said default value.</p>
+        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
+also appearing in the client’s defaults will override said default value.</p>
 </div>
       
     </li>
@@ -1173,12 +1144,12 @@ override said default value.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>Array</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Query string values, if any, to append to the given path. Strings are
-appended as-is; Hashes and Arrays are serialized as URI-encoded form data
-before appending.</p>
+        <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
 </div>
       
     </li>
@@ -1191,11 +1162,12 @@ before appending.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>The payload to send, if any. Strings are used as-is; Hashes are serialized
-per the request&#39;s “Content-Type” header.</p>
+        <div class='inline'><p>The payload to send, if any. Strings are used as-is; Hashes are serialized per the
+request’s “Content-Type” header.</p>
 </div>
       
     </li>
@@ -1236,7 +1208,7 @@ per the request&#39;s “Content-Type” header.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>query:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>payload:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='ivar'>@default_headers</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='id identifier rubyid_format_payload'>format_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='label'>as:</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='symbol'>:Content-Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='id identifier rubyid_format_payload'>format_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='label'>as:</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='symbol'>:&#39;Content-Type&#39;</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@http</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='id identifier rubyid_full_path'>full_path</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>query:</span> <span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ensure_success!'>ensure_success!</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1258,8 +1230,7 @@ per the request&#39;s “Content-Type” header.</p>
   
 </h3><div class="docstring">
   <div class="discussion">
-    
-<p>CRUD method: PUT</p>
+    <p>CRUD method: PUT</p>
 
 
   </div>
@@ -1278,10 +1249,8 @@ per the request&#39;s “Content-Type” header.</p>
       
       
         &mdash;
-        <div class='inline'>
-<p>The path to the resource to PATCH. Note that this path is always
-interpreted as relative to the client&#39;s base_uri&#39;s path, regardless
-of whether it begins with a “/”.</p>
+        <div class='inline'><p>The path to the resource to PATCH. Note that this path is always interpreted as relative to
+the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
 </div>
       
     </li>
@@ -1294,12 +1263,12 @@ of whether it begins with a “/”.</p>
         <span class='type'>(<tt>Hash</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Additional headers to set in addition to the client&#39;s defaults. Any
-header given here and also appearing in the client&#39;s defaults will
-override said default value.</p>
+        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
+also appearing in the client’s defaults will override said default value.</p>
 </div>
       
     </li>
@@ -1312,12 +1281,12 @@ override said default value.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>Array</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>Query string values, if any, to append to the given path. Strings are
-appended as-is; Hashes and Arrays are serialized as URI-encoded form data
-before appending.</p>
+        <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
 </div>
       
     </li>
@@ -1330,11 +1299,12 @@ before appending.</p>
         <span class='type'>(<tt>Hash</tt>, <tt>String</tt>)</span>
       
       
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
       
         &mdash;
-        <div class='inline'>
-<p>The payload to send, if any. Strings are used as-is; Hashes are serialized
-per the request&#39;s “Content-Type” header.</p>
+        <div class='inline'><p>The payload to send, if any. Strings are used as-is; Hashes are serialized per the
+request’s “Content-Type” header.</p>
 </div>
       
     </li>
@@ -1375,7 +1345,7 @@ per the request&#39;s “Content-Type” header.</p>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>query:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>payload:</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_headers'>headers</span> <span class='op'>=</span> <span class='ivar'>@default_headers</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
-  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='id identifier rubyid_format_payload'>format_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='label'>as:</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='symbol'>:Content-Type</span><span class='tstring_end'>&#39;</span></span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_payload'>payload</span> <span class='op'>=</span> <span class='id identifier rubyid_format_payload'>format_payload</span><span class='lparen'>(</span><span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='label'>as:</span> <span class='id identifier rubyid_headers'>headers</span><span class='lbracket'>[</span><span class='symbol'>:&#39;Content-Type&#39;</span><span class='rbracket'>]</span><span class='rparen'>)</span>
 
   <span class='id identifier rubyid_response'>response</span> <span class='op'>=</span> <span class='ivar'>@http</span><span class='period'>.</span><span class='id identifier rubyid_put'>put</span><span class='lparen'>(</span><span class='id identifier rubyid_full_path'>full_path</span><span class='lparen'>(</span><span class='id identifier rubyid_path'>path</span><span class='comma'>,</span> <span class='label'>query:</span> <span class='id identifier rubyid_query'>query</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id identifier rubyid_payload'>payload</span><span class='comma'>,</span> <span class='id identifier rubyid_headers'>headers</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_ensure_success!'>ensure_success!</span><span class='lparen'>(</span><span class='id identifier rubyid_response'>response</span><span class='rparen'>)</span>
@@ -1391,9 +1361,9 @@ per the request&#39;s “Content-Type” header.</p>
 </div>
 
       <div id="footer">
-  Generated on Wed May 30 11:27:03 2018 by
-  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.12 (ruby-2.5.1).
+  Generated on Mon Jan  2 15:16:45 2023 by
+  <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.28 (ruby-3.0.4).
 </div>
 
     </div>

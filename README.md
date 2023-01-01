@@ -2,13 +2,11 @@
 [![MIT License](https://img.shields.io/github/license/nestor-custodio/crapi)](https://tldrlegal.com/license/mit-license)
 
 
-# Crapi
+# CrAPI
 
-Crapi is yet another API wrapper. Yes, there is no shortage of these out there, but no other API wrapper gem (that I could find) provided the kind of functionality you get from the Crapi::Proxy class, which is really the biggest benefit here.
+CrAPI is yet another **Cr**ud **API** client wrapper. Yes, there is no shortage of these out there, but no other API wrapper gem (that I could find) provided the kind of functionality you get from the CrAPI::Proxy class, which is really the biggest benefit here.
 
-**Crapi::Client** will connect to the target system and handily provides a base path for you (becaue some APIs and services have a path that is always part of every request), **Crapi::Proxy** lets you add to the root client's base path or default set of headers without having to create any new connections.
-
-Why "crapi"? Because it's a <u>CR</u>UD <u>API</u> client, and (honestly) "... It could be better."™️
+**CrAPI::Client** will connect to the target system and handily provides a base path for you (because some APIs and services have a path that is always part of every request), **CrAPI::Proxy** lets you add to the root client's base path or default set of headers without having to create any new connections.
 
 
 ## Installation
@@ -28,14 +26,14 @@ Or install it yourself as:
     $ gem install crapi
 
 
-## Using The Crapi Tools
+## Using The CrAPI Tools
 
 ### Client Usage
 
 ```ruby
 # Connect to an API.
 
-api = Crapi::Client.new('https://jsonplaceholder.typicode.com/')
+api = CrAPI::Client.new('https://jsonplaceholder.typicode.com/')
 
 
 # Issue requests against the API.
@@ -55,7 +53,7 @@ api.post('comments', payload: new_comment)  # POSTs to /comments; returns a Hash
 ```ruby
 # Connect to an API.
 
-api = Crapi::Client.new('https://versioned.fake-api.com/api/')
+api = CrAPI::Client.new('https://versioned.fake-api.com/api/')
 
 
 # Back in the v1 days, versioning of this API was via the URL ...
@@ -86,7 +84,7 @@ v3.get('data')  # GETs /api/data with the v3 header.
 
 ---
 
-[Consult the repo docs for the full Crapi documentation.](http://nestor-custodio.github.io/crapi/Crapi.html)
+[Consult the repo docs for the full CrAPI documentation.](http://nestor-custodio.github.io/crapi/CrAPI.html)
 
 
 ## Feature Roadmap / Future Development
@@ -108,4 +106,4 @@ Linting is courtesy of [Rubocop](https://docs.rubocop.org/) (`bundle exec ruboco
 
 ## License
 
-Crapi is available as open source under the terms of the [MIT License](https://tldrlegal.com/license/mit-license).
+CrAPI is available as open source under the terms of the [MIT License](https://tldrlegal.com/license/mit-license).
