@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    crapi (0.1.3)
+    crapi (1.0.0)
       activesupport (>= 6.0, < 7.1)
 
 GEM
