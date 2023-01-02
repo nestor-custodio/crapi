@@ -93,7 +93,7 @@ module CrAPI
     #
     def patch(path, headers: {}, query: {}, payload: {})
       @parent.patch("/#{@segment}/#{path}".gsub(%r{/+}, '/'),
-                    heades: @default_headers.merge(headers), query: query, payload: payload)
+                    headers: @default_headers.merge(headers), query: query, payload: payload)
     end
 
     # CRUD method: POST
