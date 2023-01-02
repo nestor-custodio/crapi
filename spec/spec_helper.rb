@@ -1,5 +1,8 @@
 require 'bundler/setup'
 require 'crapi'
+require 'json'
+require 'securerandom'
+require 'webmock/rspec'
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
@@ -11,4 +14,6 @@ RSpec.configure do |config|
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
+
+  API_DOMAIN = 'https://fake-domain.lol'.freeze
 end

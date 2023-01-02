@@ -1,9 +1,5 @@
-RSpec.describe Crapi::Client do
+RSpec.describe CrAPI do
   it 'has a version number' do
-    expect(Crapi::VERSION).not_to be nil
-  end
-
-  it 'does something useful' do
-    expect(false).to eq(true)
+    expect(CrAPI::VERSION).not_to be nil
   end
 end
