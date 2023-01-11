@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Nestor Custodio']
   spec.email         = ['sakimorix@gmail.com']
 
-  spec.summary       = 'A simple API client with built-in segment/header proxy support. "... It could be better." ™️'
+  spec.summary       = 'A simple API client with built-in segment/header proxy support.'
   spec.homepage      = 'https://github.com/nestor-custodio/crapi'
   spec.license       = 'MIT'
 
