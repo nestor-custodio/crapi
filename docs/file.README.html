@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
   File: README
-
-    &mdash; Documentation by YARD 0.9.28
-
+  
+    &mdash; Documentation by YARD 0.9.44
+  
 </title>
 
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="css/common.css" type="text/css" />
+  <link rel="stylesheet" href="css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "README";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="file_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -35,14 +37,14 @@
     <div id="main" tabindex="-1">
       <div id="header">
         <div id="menu">
-
-    <a href="_index.html">Index</a> &raquo;
+  
+    <a href="_index.html">Index</a> &raquo; 
     <span class="title">File: README</span>
-
+  
 </div>
 
         <div id="search">
-
+  
     <a class="full_list_link" id="class_list_link"
         href="class_list.html">
 
@@ -52,119 +54,93 @@
           <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
         </svg>
     </a>
-
+  
 </div>
         <div class="clear"></div>
       </div>
 
       <div id="content"><div id='filecontents'><p><a href="https://rubygems.org/gems/crapi"><img src="https://img.shields.io/github/v/release/nestor-custodio/crapi?color=green&amp;label=gem%20version" alt="Gem Version" /></a>
 <a href="https://tldrlegal.com/license/mit-license"><img src="https://img.shields.io/github/license/nestor-custodio/crapi" alt="MIT License" /></a></p>
-
-<h1 id="crapi">CrAPI</h1>
-
-<p>CrAPI is yet another <u>Cr</u>ud <u>API</u> client wrapper. Yes, there is no shortage of these out there, but no other API wrapper gem (that I could find) provided the kind of functionality you get from the CrAPI::Proxy class, which is really the biggest benefit here.</p>
-
-<p><strong>CrAPI::Client</strong> will connect to the target system and handily provides a base path for you (because some APIs and services have a path that is always part of every request), <strong>CrAPI::Proxy</strong> lets you add to the root client’s base path or default set of headers without having to create any new connections.</p>
-
-<h2 id="installation">Installation</h2>
-
-<p>Add this line to your application’s Gemfile:</p>
-
-<p><code>ruby
-gem 'crapi'
-</code></p>
-
+<h1 id="CrAPI">CrAPI</h1>
+<p>CrAPI is yet another <strong>Cr</strong>ud <strong>API</strong> client wrapper. Yes, there is no shortage of these out there, but no other API wrapper gem (that I could find) provided the kind of functionality you get from the CrAPI::Proxy class, which is really the biggest benefit here.</p>
+<p><strong>CrAPI::Client</strong> will connect to the target system and handily provides a base path for you (because some APIs and services have a path that is always part of every request), <strong>CrAPI::Proxy</strong> lets you add to the root client's base path or default set of headers without having to create any new connections.</p>
+<h2 id="Installation">Installation</h2>
+<p>Add this line to your application's Gemfile:</p>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>crapi</span><span class='tstring_end'>&#39;</span></span>
+</code></pre>
 <p>And then execute:</p>
-
 <pre class="code ruby"><code class="ruby">$ bundle
 </code></pre>
-
 <p>Or install it yourself as:</p>
-
 <pre class="code ruby"><code class="ruby">$ gem install crapi
 </code></pre>
+<h2 id="Using_The_CrAPI_Tools">Using The CrAPI Tools</h2>
+<h3 id="Client_Usage">Client Usage</h3>
+<pre class="code ruby"><code class="ruby"><span class='comment'># Connect to an API.
+</span>
+<span class='id identifier rubyid_api'>api</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="CrAPI.html" title="CrAPI (module)">CrAPI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CrAPI/Client.html" title="CrAPI::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="CrAPI/Client.html#initialize-instance_method" title="CrAPI::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://jsonplaceholder.typicode.com/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
-<h2 id="using-the-crapi-tools">Using The CrAPI Tools</h2>
 
-<h3 id="client-usage">Client Usage</h3>
-
-<p>```ruby
-# Connect to an API.</p>
-
-<p>api = CrAPI::Client.new(‘https://jsonplaceholder.typicode.com/’)</p>
-
-<h1 id="issue-requests-against-the-api">Issue requests against the API.</h1>
-
-<p>api.get(‘users/1’)  # GETs /users/1; returns a Hash.</p>
-
-<p>api.get(‘posts’, query: { userId: 2 })  # GETs /posts?userId=2; returns an Array.</p>
-
-<p>mew_comment = { user: ‘megapwner’, text: ‘FRIST!!1!’ }
-api.post(‘comments’, payload: new_comment)  # POSTs to /comments; returns a Hash.
-```</p>
-
+<span class='comment'># Issue requests against the API.
+</span>
+<span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>users/1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># GETs /users/1; returns a Hash.
+</span>
+<span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>posts</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>query:</span> <span class='lbrace'>{</span> <span class='label'>userId:</span> <span class='int'>2</span> <span class='rbrace'>}</span><span class='rparen'>)</span>  <span class='comment'># GETs /posts?userId=2; returns an Array.
+</span>
+<span class='id identifier rubyid_mew_comment'>mew_comment</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>user:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>megapwner</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>text:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>FRIST!!1!</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span>
+<span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>comments</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>payload:</span> <span class='id identifier rubyid_new_comment'>new_comment</span><span class='rparen'>)</span>  <span class='comment'># POSTs to /comments; returns a Hash.
+</span></code></pre>
 <hr />
+<h3 id="Proxy_Usage">Proxy Usage</h3>
+<pre class="code ruby"><code class="ruby"><span class='comment'># Connect to an API.
+</span>
+<span class='id identifier rubyid_api'>api</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="CrAPI.html" title="CrAPI (module)">CrAPI</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="CrAPI/Client.html" title="CrAPI::Client (class)">Client</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="CrAPI/Client.html#initialize-instance_method" title="CrAPI::Client#initialize (method)">new</a></span></span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>https://versioned.fake-api.com/api/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
-<h3 id="proxy-usage">Proxy Usage</h3>
 
-<p>```ruby
-# Connect to an API.</p>
+<span class='comment'># Back in the v1 days, versioning of this API was via the URL ...
+</span>
+<span class='id identifier rubyid_v1'>v1</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_new_proxy'>new_proxy</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/v1</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 
-<p>api = CrAPI::Client.new(‘https://versioned.fake-api.com/api/’)</p>
+<span class='id identifier rubyid_v1'>v1</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>data</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># GETs /api/v1/data; pretty straight-forward.
+</span><span class='id identifier rubyid_v1'>v1</span><span class='period'>.</span><span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>data</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>payload:</span> <span class='id identifier rubyid_values'>values</span><span class='rparen'>)</span>  <span class='comment'># POSTs *values* to /api/v1/data.
+</span>
 
-<h1 id="back-in-the-v1-days-versioning-of-this-api-was-via-the-url-">Back in the v1 days, versioning of this API was via the URL …</h1>
+<span class='comment'># For API v2, they switched to an Accept header approach ...
+</span>
+<span class='id identifier rubyid_v2'>v2</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_new_proxy'>new_proxy</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='lbrace'>{</span> <span class='label'>Accept:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/vnd.fake-api.v2+json</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
 
-<p>v1 = api.new_proxy(‘/v1’)</p>
+<span class='id identifier rubyid_v2'>v2</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>data</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># GETs /api/data with the v2 header.
+</span>
 
-<p>v1.get(‘data’)  # GETs /api/v1/data; pretty straight-forward.
-v1.post(‘data’, payload: values)  # POSTs <em>values</em> to /api/v1/data.</p>
+<span class='comment'># API v3 keeps the Accept header approach ...
+</span>
+<span class='id identifier rubyid_v3'>v3</span> <span class='op'>=</span> <span class='id identifier rubyid_api'>api</span><span class='period'>.</span><span class='id identifier rubyid_new_proxy'>new_proxy</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='comma'>,</span> <span class='label'>headers:</span> <span class='lbrace'>{</span> <span class='label'>Accept:</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>application/vnd.fake-api.v3+json</span><span class='tstring_end'>&#39;</span></span> <span class='rbrace'>}</span><span class='rparen'>)</span>
 
-<h1 id="for-api-v2-they-switched-to-an-accept-header-approach-">For API v2, they switched to an Accept header approach …</h1>
+<span class='id identifier rubyid_v3'>v3</span><span class='period'>.</span><span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>data</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>  <span class='comment'># GETs /api/data with the v3 header.
+</span>
 
-<p>v2 = api.new_proxy(‘/’, headers: { Accept: ‘application/vnd.fake-api.v2+json’ })</p>
-
-<p>v2.get(‘data’)  # GETs /api/data with the v2 header.</p>
-
-<h1 id="api-v3-keeps-the-accept-header-approach-">API v3 keeps the Accept header approach …</h1>
-
-<p>v3 = api.new_proxy(‘/’, headers: { Accept: ‘application/vnd.fake-api.v3+json’ })</p>
-
-<p>v3.get(‘data’)  # GETs /api/data with the v3 header.</p>
-
-<h1 id="note-that-only-one-connection-to-the-client-is-made-and-you-can-easily-make">Note that only one connection to the client is made and you can easily make</h1>
-<p># v1, v2, and v3 API calls ad hoc without having to juggle paths/headers yourself.
-```</p>
-
+<span class='comment'># Note that only one connection to the client is made and you can easily make
+</span><span class='comment'># v1, v2, and v3 API calls ad hoc without having to juggle paths/headers yourself.
+</span></code></pre>
 <hr />
-
 <p><a href="https://nestor-custodio.github.io/crapi/CrAPI.html">Consult the repo docs for the full CrAPI documentation.</a></p>
-
-<h2 id="feature-roadmap--future-development">Feature Roadmap / Future Development</h2>
-
+<h2 id="Feature_Roadmap___Future_Development">Feature Roadmap / Future Development</h2>
 <p>Additional features/options coming in the future:</p>
-
 <ul>
-  <li>Cleaner handling of non-body-returning calls.</li>
-  <li>More resilient serializing of non-String paylods when using custom Content-Type headers.</li>
+<li>Cleaner handling of non-body-returning calls.</li>
+<li>More resilient serializing of non-String paylods when using custom Content-Type headers.</li>
 </ul>
-
-<h2 id="contribution--development">Contribution / Development</h2>
-
-<p>Bug reports and pull requests are welcome at: <a href="https://github.com/nestor-custodio/crapi">https://github.com/nestor-custodio/crapi</a></p>
-
+<h2 id="Contribution___Development">Contribution / Development</h2>
+<p>Bug reports and pull requests are welcome at: <a href="https://github.com/nestor-custodio/crapi"><a href="https://github.com/nestor-custodio/crapi">https://github.com/nestor-custodio/crapi</a></a></p>
 <p>After checking out the repo, run <code>bin/setup</code> to install dependencies. Then, run <code>bundle exec rspec</code> to run the tests. You can also run <code>bin/console</code> for an interactive prompt that will allow you to experiment.</p>
-
 <p>Linting is courtesy of <a href="https://docs.rubocop.org/">Rubocop</a> (<code>bundle exec rubocop</code>) and documentation is built using <a href="https://yardoc.org/">Yard</a> (<code>bundle exec yard</code>). Please ensure you have a clean bill of health from Rubocop and that any new features and/or changes to behaviour are reflected in the documentation before submitting a pull request.</p>
-
-<h2 id="license">License</h2>
-
-<p>CrAPI is available as open source under the terms of the <a href="https://tldrlegal.com/license/mit-license">MIT License</a>.</p>
-</div></div>
+<h2 id="License">License</h2>
+<p>CrAPI is available as open source under the terms of the <a href="https://tldrlegal.com/license/mit-license">MIT License</a>.</p></div></div>
 
       <div id="footer">
-  Generated on Mon Jan  2 15:24:34 2023 by
+  Generated on Sun Jul  5 14:46:38 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.28 (ruby-3.0.4).
+  0.9.44 (ruby-3.4.8).
 </div>
 
     </div>

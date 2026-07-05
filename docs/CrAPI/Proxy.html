@@ -6,13 +6,13 @@
 <title>
   Class: CrAPI::Proxy
   
-    &mdash; Documentation by YARD 0.9.28
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "CrAPI::Proxy";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -94,7 +96,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/crapi/proxy.rb</dd>
+    <dd>lib/crapi/proxy.rb
+</dd>
   </dl>
   
 </div>
@@ -104,14 +107,12 @@
     <p>Proxies simple CRUD methods (<span class='object_link'><a href="#delete-instance_method" title="CrAPI::Proxy#delete (method)">#delete</a></span> / <span class='object_link'><a href="#get-instance_method" title="CrAPI::Proxy#get (method)">#get</a></span> / <span class='object_link'><a href="#patch-instance_method" title="CrAPI::Proxy#patch (method)">#patch</a></span> / <span class='object_link'><a href="#post-instance_method" title="CrAPI::Proxy#post (method)">#post</a></span> / <span class='object_link'><a href="#put-instance_method" title="CrAPI::Proxy#put (method)">#put</a></span>) for a
 <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span> or another <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span>. Like
 <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span>, it also provides a proxy generator.</p>
-
 <p>A <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> has its own set of default headers and has a segment that is
-prepended to its CRUD methods’ <em>path</em> before being passed to the parent
+prepended to its CRUD methods' <em>path</em> before being passed to the parent
 <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span>/<span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span>. This makes the proxxy functionally
-equivalent to a new <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span> with a new base path (the parent’s base path
-plus the proxy’s segment) and more default headers, but without the need for a separate
+equivalent to a new <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span> with a new base path (the parent's base path
+plus the proxy's segment) and more default headers, but without the need for a separate
 connection to the target system.</p>
-
 
   </div>
 </div>
@@ -145,8 +146,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>A Hash containing headers to send with every request (unless overriden elsewhere).</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A Hash containing headers to send with every request (unless overriden elsewhere).</p></div></span>
   
 </li>
 
@@ -181,8 +181,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: DELETE.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: DELETE.</p></div></span>
   
 </li>
 
@@ -204,8 +203,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: GET.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: GET.</p></div></span>
   
 </li>
 
@@ -229,8 +227,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>A new instance of Proxy.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A new instance of Proxy.</p></div></span>
   
 </li>
 
@@ -252,8 +249,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Returns a new <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this proxy.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Returns a new <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this proxy.</p></div></span>
   
 </li>
 
@@ -275,8 +271,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: PATCH.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: PATCH.</p></div></span>
   
 </li>
 
@@ -298,8 +293,7 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: POST.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: POST.</p></div></span>
   
 </li>
 
@@ -321,13 +315,13 @@ connection to the target system.</p>
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: PUT.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: PUT.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 <div id="constructor_details" class="method_details_list">
@@ -346,7 +340,6 @@ connection to the target system.</p>
   <div class="discussion">
     <p>Returns a new instance of Proxy.</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -363,9 +356,8 @@ connection to the target system.</p>
       
       
         &mdash;
-        <div class='inline'><p>The new base path. This path (added to the parent’s base path) will be used as the base
-path for the <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span>’s CRUD methods.</p>
-</div>
+        <div class='inline'><p>The new base path. This path (added to the parent's base path) will be used as the base
+path for the <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span>'s CRUD methods.</p></div>
       
     </li>
   
@@ -379,9 +371,8 @@ path for the <span class='object_link'><a href="" title="CrAPI::Proxy (class)">C
       
       
         &mdash;
-        <div class='inline'><p>The parent <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span> or <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> that we’ll be
-delegating CRUD calls to after proprocessing of headers and paths.</p>
-</div>
+        <div class='inline'><p>The parent <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span> or <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> that we'll be
+delegating CRUD calls to after proprocessing of headers and paths.</p></div>
       
     </li>
   
@@ -397,8 +388,7 @@ delegating CRUD calls to after proprocessing of headers and paths.</p>
       
       
         &mdash;
-        <div class='inline'><p>The default headers to send with every request (unless overriden elsewhere).</p>
-</div>
+        <div class='inline'><p>The default headers to send with every request (unless overriden elsewhere).</p></div>
       
     </li>
   
@@ -450,9 +440,8 @@ delegating CRUD calls to after proprocessing of headers and paths.</p>
   <div class="discussion">
     <p>A Hash containing headers to send with every request (unless overriden elsewhere). In case of
 conflicts, headers set as default for a <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> override those set by the
-parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span>, headers set by the user via the CRUD methods’
+parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Client (class)">CrAPI::Client</a></span>, headers set by the user via the CRUD methods'
 <em>headers</em> still override any conflicting default header.</p>
-
 
   </div>
 </div>
@@ -506,7 +495,6 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
 </h3><div class="docstring">
   <div class="discussion">
     <p>CRUD method: DELETE</p>
-
 
   </div>
 </div>
@@ -569,7 +557,6 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
   <div class="discussion">
     <p>CRUD method: GET</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -631,7 +618,6 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
   <div class="discussion">
     <p>Returns a new <span class='object_link'><a href="" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this proxy.</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -650,8 +636,7 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
       
       
         &mdash;
-        <div class='inline'><p>The segment to add to this proxy’s path.</p>
-</div>
+        <div class='inline'><p>The segment to add to this proxy's path.</p></div>
       
     </li>
   
@@ -667,8 +652,7 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
       
       
         &mdash;
-        <div class='inline'><p>The default headers for the new proxy.</p>
-</div>
+        <div class='inline'><p>The default headers for the new proxy.</p></div>
       
     </li>
   
@@ -728,7 +712,6 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
 </h3><div class="docstring">
   <div class="discussion">
     <p>CRUD method: PATCH</p>
-
 
   </div>
 </div>
@@ -791,7 +774,6 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
   <div class="discussion">
     <p>CRUD method: POST</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -853,7 +835,6 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
   <div class="discussion">
     <p>CRUD method: PUT</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -907,9 +888,9 @@ parent. As in a <span class='object_link'><a href="Client.html" title="CrAPI::Cl
 </div>
 
       <div id="footer">
-  Generated on Mon Jan  2 15:24:34 2023 by
+  Generated on Sun Jul  5 14:46:38 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.28 (ruby-3.0.4).
+  0.9.44 (ruby-3.4.8).
 </div>
 
     </div>

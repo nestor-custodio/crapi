@@ -6,13 +6,13 @@
 <title>
   Class: CrAPI::Client
   
-    &mdash; Documentation by YARD 0.9.28
+    &mdash; Documentation by YARD 0.9.44
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css">
 
 <script type="text/javascript">
   pathId = "CrAPI::Client";
@@ -27,6 +27,8 @@
 
   </head>
   <body>
+    <div id="main_progress" aria-hidden="true"></div>
+
     <div class="nav_wrap">
       <iframe id="nav" src="../class_list.html?1"></iframe>
       <div id="resizer"></div>
@@ -94,7 +96,8 @@
   
   <dl>
     <dt>Defined in:</dt>
-    <dd>lib/crapi/client.rb</dd>
+    <dd>lib/crapi/client.rb
+</dd>
   </dl>
   
 </div>
@@ -103,7 +106,6 @@
   <div class="discussion">
     <p>Provides a connection mechanism, simple CRUD methods (<span class='object_link'><a href="#delete-instance_method" title="CrAPI::Client#delete (method)">#delete</a></span> / <span class='object_link'><a href="#get-instance_method" title="CrAPI::Client#get (method)">#get</a></span> / <span class='object_link'><a href="#patch-instance_method" title="CrAPI::Client#patch (method)">#patch</a></span> / <span class='object_link'><a href="#post-instance_method" title="CrAPI::Client#post (method)">#post</a></span> /
 <span class='object_link'><a href="#put-instance_method" title="CrAPI::Client#put (method)">#put</a></span>), and proxy generators.</p>
-
 
   </div>
 </div>
@@ -124,7 +126,6 @@
   <div class="discussion">
     <p>The content-type for JSON data.</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -138,7 +139,6 @@
           <div class="docstring">
   <div class="discussion">
     <p>The content-type for FORM data.</p>
-
 
   </div>
 </div>
@@ -178,8 +178,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>A Hash containing headers to send with every request (unless overriden elsewhere).</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A Hash containing headers to send with every request (unless overriden elsewhere).</p></div></span>
   
 </li>
 
@@ -214,8 +213,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: DELETE.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: DELETE.</p></div></span>
   
 </li>
 
@@ -237,8 +235,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: GET.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: GET.</p></div></span>
   
 </li>
 
@@ -262,8 +259,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>A new instance of Client.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>A new instance of Client.</p></div></span>
   
 </li>
 
@@ -285,8 +281,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Returns a new <span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this client.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>Returns a new <span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this client.</p></div></span>
   
 </li>
 
@@ -308,8 +303,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: PATCH.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: PATCH.</p></div></span>
   
 </li>
 
@@ -331,8 +325,7 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: POST.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: POST.</p></div></span>
   
 </li>
 
@@ -354,13 +347,13 @@
   
 
   
-    <span class="summary_desc"><div class='inline'><p>CRUD method: PUT.</p>
-</div></span>
+    <span class="summary_desc"><div class='inline'><p>CRUD method: PUT.</p></div></span>
   
 </li>
 
       
     </ul>
+    
   
 
 <div id="constructor_details" class="method_details_list">
@@ -379,7 +372,6 @@
   <div class="discussion">
     <p>Returns a new instance of Client.</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -397,8 +389,7 @@
       
         &mdash;
         <div class='inline'><p>The base URI the client should use for determining the host to connect to, determining
-whether SSH is applicable, and setting the base path for subsequent CRUD calls.</p>
-</div>
+whether SSH is applicable, and setting the base path for subsequent CRUD calls.</p></div>
       
     </li>
   
@@ -414,8 +405,7 @@ whether SSH is applicable, and setting the base path for subsequent CRUD calls.<
       
       
         &mdash;
-        <div class='inline'><p>Method options. All method options are <strong>optional</strong> in this particular case.</p>
-</div>
+        <div class='inline'><p>Method options. All method options are <strong>optional</strong> in this particular case.</p></div>
       
     </li>
   
@@ -436,9 +426,8 @@ whether SSH is applicable, and setting the base path for subsequent CRUD calls.<
             
           </span>
           
-            &mdash; <div class='inline'><p>Whether to allow insecure SSH connections (i.e. don’t attempt to verify the validity of the
-given certificate).</p>
-</div>
+            &mdash; <div class='inline'><p>Whether to allow insecure SSH connections (i.e. don't attempt to verify the validity of the
+given certificate).</p></div>
           
         </li>
       
@@ -450,8 +439,7 @@ given certificate).</p>
           </span>
           
             &mdash; <div class='inline'><p>The DNS name or IP address of a proxy server to use when connecting to the target system.
-Maps to <code>Net::HTTP#new</code>’s <em>p_addr</em>.</p>
-</div>
+Maps to <code>Net::HTTP#new</code>'s <em>p_addr</em>.</p></div>
           
         </li>
       
@@ -463,8 +451,7 @@ Maps to <code>Net::HTTP#new</code>’s <em>p_addr</em>.</p>
           </span>
           
             &mdash; <div class='inline'><p>The proxy server port to use when connecting to the target system.
-Maps to <code>Net::HTTP#new</code>’s <em>p_port</em>.</p>
-</div>
+Maps to <code>Net::HTTP#new</code>'s <em>p_port</em>.</p></div>
           
         </li>
       
@@ -476,8 +463,7 @@ Maps to <code>Net::HTTP#new</code>’s <em>p_port</em>.</p>
           </span>
           
             &mdash; <div class='inline'><p>The username to give if authorization is required to access the specified proxy host.
-Maps to <code>Net::HTTP#new</code>’s <em>p_user</em>.</p>
-</div>
+Maps to <code>Net::HTTP#new</code>'s <em>p_user</em>.</p></div>
           
         </li>
       
@@ -489,8 +475,7 @@ Maps to <code>Net::HTTP#new</code>’s <em>p_user</em>.</p>
           </span>
           
             &mdash; <div class='inline'><p>The password to give if authorization is required to access the specified proxy host.
-Maps to <code>Net::HTTP#new</code>’s <em>p_pass</em>.</p>
-</div>
+Maps to <code>Net::HTTP#new</code>'s <em>p_pass</em>.</p></div>
           
         </li>
       
@@ -583,9 +568,8 @@ Maps to <code>Net::HTTP#new</code>’s <em>p_pass</em>.</p>
 </h3><div class="docstring">
   <div class="discussion">
     <p>A Hash containing headers to send with every request (unless overriden elsewhere). Headers
-set by the user via the CRUD methods’ <em>headers</em> still override any conflicting default
+set by the user via the CRUD methods' <em>headers</em> still override any conflicting default
 header.</p>
-
 
   </div>
 </div>
@@ -633,7 +617,6 @@ header.</p>
   <div class="discussion">
     <p>CRUD method: DELETE</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -651,8 +634,7 @@ header.</p>
       
         &mdash;
         <div class='inline'><p>The path to the resource to DELETE. Note that this path is always interpreted as relative
-to the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
-</div>
+to the client's base_uri's path, regardless of whether it begins with a &quot;/&quot;.</p></div>
       
     </li>
   
@@ -668,9 +650,8 @@ to the client’s base_uri’s path, regardless of whether it begins with a “/
       
       
         &mdash;
-        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
-also appearing in the client’s defaults will override said default value.</p>
-</div>
+        <div class='inline'><p>Additional headers to set in addition to the client's defaults. Any header given here and
+also appearing in the client's defaults will override said default value.</p></div>
       
     </li>
   
@@ -687,8 +668,7 @@ also appearing in the client’s defaults will override said default value.</p>
       
         &mdash;
         <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
-Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
-</div>
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p></div>
       
     </li>
   
@@ -750,7 +730,6 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
   <div class="discussion">
     <p>CRUD method: GET</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -768,8 +747,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
         &mdash;
         <div class='inline'><p>The path to the resource to GET. Note that this path is always interpreted as relative to
-the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
-</div>
+the client's base_uri's path, regardless of whether it begins with a &quot;/&quot;.</p></div>
       
     </li>
   
@@ -785,9 +763,8 @@ the client’s base_uri’s path, regardless of whether it begins with a “/”
       
       
         &mdash;
-        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
-also appearing in the client’s defaults will override said default value.</p>
-</div>
+        <div class='inline'><p>Additional headers to set in addition to the client's defaults. Any header given here and
+also appearing in the client's defaults will override said default value.</p></div>
       
     </li>
   
@@ -804,8 +781,7 @@ also appearing in the client’s defaults will override said default value.</p>
       
         &mdash;
         <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
-Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
-</div>
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p></div>
       
     </li>
   
@@ -867,7 +843,6 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
   <div class="discussion">
     <p>Returns a new <span class='object_link'><a href="Proxy.html" title="CrAPI::Proxy (class)">CrAPI::Proxy</a></span> for this client.</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -886,8 +861,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
       
         &mdash;
-        <div class='inline'><p>The segment to add to this client’s path.</p>
-</div>
+        <div class='inline'><p>The segment to add to this client's path.</p></div>
       
     </li>
   
@@ -903,8 +877,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
       
         &mdash;
-        <div class='inline'><p>The default headers for the new proxy.</p>
-</div>
+        <div class='inline'><p>The default headers for the new proxy.</p></div>
       
     </li>
   
@@ -958,7 +931,6 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
   <div class="discussion">
     <p>CRUD method: PATCH</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -976,8 +948,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
         &mdash;
         <div class='inline'><p>The path to the resource to PATCH. Note that this path is always interpreted as relative to
-the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
-</div>
+the client's base_uri's path, regardless of whether it begins with a &quot;/&quot;.</p></div>
       
     </li>
   
@@ -993,9 +964,8 @@ the client’s base_uri’s path, regardless of whether it begins with a “/”
       
       
         &mdash;
-        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
-also appearing in the client’s defaults will override said default value.</p>
-</div>
+        <div class='inline'><p>Additional headers to set in addition to the client's defaults. Any header given here and
+also appearing in the client's defaults will override said default value.</p></div>
       
     </li>
   
@@ -1012,8 +982,7 @@ also appearing in the client’s defaults will override said default value.</p>
       
         &mdash;
         <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
-Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
-</div>
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p></div>
       
     </li>
   
@@ -1030,8 +999,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
         &mdash;
         <div class='inline'><p>The payload to send, if any. Strings are used as-is; Hashes are serialized per the
-request’s “Content-Type” header.</p>
-</div>
+request's &quot;Content-Type&quot; header.</p></div>
       
     </li>
   
@@ -1095,7 +1063,6 @@ request’s “Content-Type” header.</p>
   <div class="discussion">
     <p>CRUD method: POST</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -1113,8 +1080,7 @@ request’s “Content-Type” header.</p>
       
         &mdash;
         <div class='inline'><p>The path to the resource to POST. Note that this path is always interpreted as relative to
-the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
-</div>
+the client's base_uri's path, regardless of whether it begins with a &quot;/&quot;.</p></div>
       
     </li>
   
@@ -1130,9 +1096,8 @@ the client’s base_uri’s path, regardless of whether it begins with a “/”
       
       
         &mdash;
-        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
-also appearing in the client’s defaults will override said default value.</p>
-</div>
+        <div class='inline'><p>Additional headers to set in addition to the client's defaults. Any header given here and
+also appearing in the client's defaults will override said default value.</p></div>
       
     </li>
   
@@ -1149,8 +1114,7 @@ also appearing in the client’s defaults will override said default value.</p>
       
         &mdash;
         <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
-Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
-</div>
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p></div>
       
     </li>
   
@@ -1167,8 +1131,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
         &mdash;
         <div class='inline'><p>The payload to send, if any. Strings are used as-is; Hashes are serialized per the
-request’s “Content-Type” header.</p>
-</div>
+request's &quot;Content-Type&quot; header.</p></div>
       
     </li>
   
@@ -1232,7 +1195,6 @@ request’s “Content-Type” header.</p>
   <div class="discussion">
     <p>CRUD method: PUT</p>
 
-
   </div>
 </div>
 <div class="tags">
@@ -1250,8 +1212,7 @@ request’s “Content-Type” header.</p>
       
         &mdash;
         <div class='inline'><p>The path to the resource to PATCH. Note that this path is always interpreted as relative to
-the client’s base_uri’s path, regardless of whether it begins with a “/”.</p>
-</div>
+the client's base_uri's path, regardless of whether it begins with a &quot;/&quot;.</p></div>
       
     </li>
   
@@ -1267,9 +1228,8 @@ the client’s base_uri’s path, regardless of whether it begins with a “/”
       
       
         &mdash;
-        <div class='inline'><p>Additional headers to set in addition to the client’s defaults. Any header given here and
-also appearing in the client’s defaults will override said default value.</p>
-</div>
+        <div class='inline'><p>Additional headers to set in addition to the client's defaults. Any header given here and
+also appearing in the client's defaults will override said default value.</p></div>
       
     </li>
   
@@ -1286,8 +1246,7 @@ also appearing in the client’s defaults will override said default value.</p>
       
         &mdash;
         <div class='inline'><p>Query string values, if any, to append to the given path. Strings are appended as-is;
-Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
-</div>
+Hashes and Arrays are serialized as URI-encoded form data before appending.</p></div>
       
     </li>
   
@@ -1304,8 +1263,7 @@ Hashes and Arrays are serialized as URI-encoded form data before appending.</p>
       
         &mdash;
         <div class='inline'><p>The payload to send, if any. Strings are used as-is; Hashes are serialized per the
-request’s “Content-Type” header.</p>
-</div>
+request's &quot;Content-Type&quot; header.</p></div>
       
     </li>
   
@@ -1361,9 +1319,9 @@ request’s “Content-Type” header.</p>
 </div>
 
       <div id="footer">
-  Generated on Mon Jan  2 15:24:34 2023 by
+  Generated on Sun Jul  5 14:46:38 2026 by
   <a href="https://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.28 (ruby-3.0.4).
+  0.9.44 (ruby-3.4.8).
 </div>
 
     </div>
