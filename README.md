@@ -84,7 +84,7 @@ v3.get('data')  # GETs /api/data with the v3 header.
 
 ---
 
-[Consult the repo docs for the full CrAPI documentation.](http://nestor-custodio.github.io/crapi/CrAPI.html)
+[Consult the repo docs for the full CrAPI documentation.](https://nestor-custodio.github.io/crapi/CrAPI.html)
 
 
 ## Feature Roadmap / Future Development
